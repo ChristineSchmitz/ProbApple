@@ -2,7 +2,7 @@
 A **Prob**abilistic model to forecast **Apple** yield and high-quality yield. 
 
 # Background
-Fruit growers aim to produce high-quality apples in their orchards. An approximation for the total yield and the high-quality yield at harvest early in the season, helps the apple producers in their operational planning. We developed ProbApple a probabilistic model, based on Monte Carlo simulations to forecast apple yield and high-quality yield a four key time points during the vegetation period: ‘full bloom’, ‘before fruit thinning’, ‘after June drop’, ‘four weeks before harvest’. 
+Fruit growers aim to produce high-quality apples in their orchards. An approximation for the total yield and the high-quality yield at harvest early in the season, helps the apple producers in their operational planning. We developed ProbApple a probabilistic model, based on Monte Carlo simulations to forecast apple yield and high-quality yield a four key time points during the vegetation period: ‘at full bloom’, ‘before fruit thinning’, ‘after June drop’, ‘four weeks before harvest’. 
 
 This repository contains all files to run ProbApple and visualize the results. Additionally the results for a case study on 'Gala' apple the German Rhineland are available here. Model and case study are described in the manuscript *ProbApple – A probabilistic model to forecast apple yield and quality* by [Christine Schmitz](https://github.com/ChristineSchmitz), [Lars Zimmermann](https://github.com/Lars-Zimmermann), [Katja Schiffers](https://github.com/katjaschiffers), Martin Balmer and [Eike Luedeling](https://github.com/eikeluedeling). 
 The code is written in R (R Core team, 2024)[^1] and mainly uses the package decisionSupport (Luedeling et al., 2021)[^2]. Further functions from the packages tidyverse (Wickham et al., 2019)[^3], png (Urbanek, 2022)[^4], patchwork (Pedersen, 2024)[^5] and ggtext (Wilke, 2022)[^6] were used to sort and visualize the simulation results. 
@@ -10,7 +10,7 @@ The code is written in R (R Core team, 2024)[^1] and mainly uses the package dec
 ## Abbreviations
 Abbreviations for the forecasting time points used in code and inputs files
 
-tp1 = full bloom (BBCH 65), picture: [`Flower_Cluster_p1.png`](https://github.com/ChristineSchmitz/ProbApple/blob/main/Flower_Cluster_p1.png)
+tp1 = at full bloom (BBCH 65), picture: [`Flower_Cluster_p1.png`](https://github.com/ChristineSchmitz/ProbApple/blob/main/Flower_Cluster_p1.png)
 
 tp2 = before fruit thinning (fruitlets have a diameter of approximately 1 cm), picture: [`Fruit_Cluster_p2.png`](https://github.com/ChristineSchmitz/ProbApple/blob/main/Fruit_Cluster_p2.png)
 
@@ -36,7 +36,7 @@ tp4 = four weeks before the estimated harvest date, picture: [`apple_p4.png`](ht
 
 ## Results 
 In a case study, we applied ProbApple for a Gala orchard in the Rhineland, an important apple growing region in western Germany. We tested it for two different management scenarios: with and without anti-hail netting. 
-[`MC_results`](https://github.com/ChristineSchmitz/ProbApple/blob/main/MC_results) is a folder containing the simulation results for both scenarios at all four forecasting time points (full bloom, before fruit thinning, after June drop and 4 weeks before the estimated harvest date). The results are provided as RDS and csv files. The RDS files could be used in R to further analyse the results, while cvs file could be used in other programs as well 
+[`MC_results`](https://github.com/ChristineSchmitz/ProbApple/blob/main/MC_results) is a folder containing the simulation results for both scenarios at all four forecasting time points (at full bloom, before fruit thinning, after June drop and 4 weeks before the estimated harvest date). The results are provided as RDS and csv files. The RDS files could be used in R to further analyse the results, while cvs file could be used in other programs as well.
 
 ## Visualization of the results
 [`Plotting_ProbApple_simulation_results.R`](https://github.com/ChristineSchmitz/ProbApple/blob/main/Plotting_ProbApple_simulation_results.R) generates histogram plots for yield and high-quality yield, it calculates and plots the Variable Importance in Projection (VIP) and provides a histogram plot to compare high-quality yield the management scenarios. To structure the results of the PLS regression for the VIP plot, the function in [`Sorting_VIP_data.R`](https://github.com/ChristineSchmitz/ProbApple/blob/main/Sorting_VIP_data.R) is needed. 
