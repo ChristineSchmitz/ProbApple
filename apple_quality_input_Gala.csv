@@ -183,7 +183,7 @@ thinner_efficiency_chemical_fruit_thinning,tnorm_0_1,0.15,NA,0.5,%/100,Thinner e
 timespan_tp1_harvest,posnorm,130,NA,142,days,Timespan from full bloom to begin of harvest
 timespan_tp1_tp2,posnorm,15,NA,20,days,Timespan from full bloom until shortly before chemical fruit thinning
 timespan_tp1_tp3,posnorm,42,NA,56,days,Timespan from full bloom until end of June drop
-timespan_tp4_harvest,posnorm,28,NA,35,days,Timespan 4 weeks before the estimated harvest date
+timespan_tp4_harvest,posnorm,28,NA,35,days,Actual duration from 4 weeks before the estimated harvest date to harvest date
 weekly_diameter_increase_tp2_tp3,posnorm,0.35,NA,0.5,cm,Weekly diameter increase (tp2-tp3)
 weekly_diameter_increase_tp3_tp4,posnorm,0.35,NA,0.55,cm,Weekly diameter increase (tp3-tp4)
 weekly_diameter_increase_tp4_harvest,posnorm,0.15,NA,0.35,cm,Weekly diameter increase (tp4-harvest)

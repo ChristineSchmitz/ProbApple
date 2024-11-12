@@ -24,7 +24,7 @@ tp4 = four weeks before the estimated harvest date, picture: [`apple_p4.png`](ht
 
 [`ProbApple_Code.R`](https://github.com/ChristineSchmitz/ProbApple/blob/main/ProbApple_Code.R) contains the functions for the ProbApple model. After loading the required packages, the functions for the yield and quality sub-models are defined. The sub-models were combined to one model function for each forecasting time point. 
 
-[`Simulation_with_ProbApple.R`](https://github.com/ChristineSchmitz/ProbApple/blob/main/Simulation_with_ProbApple.R) loads the ProbApple model and the required inputs to run a Monte Carlo simulation. This script is needed to generate simulation results with ProbApple. Here the model is applied for two different management scenarios with and without anti-hail netting.  
+[`Simulations_with_ProbApple.R`](https://github.com/ChristineSchmitz/ProbApple/blob/main/Simulations_with_ProbApple.R) loads the ProbApple model and the required inputs to run a Monte Carlo simulation. This script is needed to generate simulation results with ProbApple. Here the model is applied for two different management scenarios with and without anti-hail netting.  
 
 ## Input files
 

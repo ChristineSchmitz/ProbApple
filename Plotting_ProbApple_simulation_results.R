@@ -132,37 +132,12 @@ labels <- c("qualityyieldtp1" = "<img src='Flower_Cluster_p1.png' width='30' /><
             "qualityyieldtp3" = "<img src='after_june_drop_p3.png' width='30' /><br>*tp 3*",
             "qualityyieldtp4" = "<img src='apple_p4.png' width='30' /><br>*tp 4*") 
 
-#plot the results with the description in one line
-#png("Figures_Gala/VIP_quality_yield.png", pointsize=10, width=4500, height=6000, res=600)
-ggplot(VIP_and_Coef_quality_yield_threshold_mit_coef_longer, aes(qualityyieldtp, forcats::fct_rev(variablen_VIP), color = PosNeg, size = VIP_threshold_corr)) +
-  geom_point(shape = 16, stroke = 0) +
-  geom_hline(yintercept = seq(.5, 30.5, 1), linewidth = .2, color= "gray75") +
-  #scale_x_discrete() +
-  scale_radius(range = c(1, 9)) +
-  scale_color_manual(values = c("negative"="red", "positive"="blue"))  +
-  theme_minimal() +
-  theme(legend.position = "right", 
-        panel.grid.major = element_blank(),
-        legend.text = element_text(size = 8),
-        legend.title = element_text(size = 8),
-        axis.text = element_text(color = "black"),
-        axis.text.x = ggtext::element_markdown()) +
-  guides(size = guide_legend(override.aes = list(fill = NA, color = "black", stroke = .25), 
-                             label.position = "bottom",
-                             title.position = "right", 
-                             order = 1),
-         fill = guide_colorbar(ticks.colour = NA, title.position = "top", order = 2)) +
-  labs(size = "Area = VIP", color = "Coefficient", x = NULL, y = NULL)+
-  scale_x_discrete(labels=labels, position = "top")+
-  geom_vline(xintercept = seq(0.5,5.5,1), linewidth=.2, color="gray75")
-#dev.off()
-
 #reformat some descriptions to go over two lines
-variablen_VIP[42]<-"Percentage change of weekly diameter\nincrease in case of overbearing (tp2-tp3, tp3-tp4, tp4-harvest)"             
-VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[13]<-"Percentage change of weekly diameter\nincrease in case of overbearing (tp2-tp3, tp3-tp4, tp4-harvest)"
-VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[14]<-"Percentage change of weekly diameter\nincrease in case of overbearing (tp2-tp3, tp3-tp4, tp4-harvest)"
-VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[15]<-"Percentage change of weekly diameter\nincrease in case of overbearing (tp2-tp3, tp3-tp4, tp4-harvest)"
-VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[16]<-"Percentage change of weekly diameter\nincrease in case of overbearing (tp2-tp3, tp3-tp4, tp4-harvest)"
+variablen_VIP[42]<-"Percentage change of weekly diameter\nincrease in case of overbearing (tp2-tp3, tp3-tp4, tp4-harvest)*"             
+VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[13]<-"Percentage change of weekly diameter\nincrease in case of overbearing (tp2-tp3, tp3-tp4, tp4-harvest)*"
+VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[14]<-"Percentage change of weekly diameter\nincrease in case of overbearing (tp2-tp3, tp3-tp4, tp4-harvest)*"
+VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[15]<-"Percentage change of weekly diameter\nincrease in case of overbearing (tp2-tp3, tp3-tp4, tp4-harvest)*"
+VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[16]<-"Percentage change of weekly diameter\nincrease in case of overbearing (tp2-tp3, tp3-tp4, tp4-harvest)*"
 
 variablen_VIP[33]<-"Percentage of apples with\ninsufficient peel color under normal conditions (tp4-harvest)"                          
 VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[9]<-"Percentage of apples with\ninsufficient peel color under normal conditions (tp4-harvest)" 
@@ -170,9 +145,14 @@ VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[10]<-"Percent
 VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[11]<-"Percentage of apples with\ninsufficient peel color under normal conditions (tp4-harvest)" 
 VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[12]<-"Percentage of apples with\ninsufficient peel color under normal conditions (tp4-harvest)" 
 
+variablen_VIP[166]<-"Actual duration from 4 weeks before the\nestimated harvest date to harvest date"             
+VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[57]<-"Actual duration from 4 weeks before the\nestimated harvest date to harvest date"
+VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[58]<-"Actual duration from 4 weeks before the\nestimated harvest date to harvest date"
+VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[59]<-"Actual duration from 4 weeks before the\nestimated harvest date to harvest date"
+VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[60]<-"Actual duration from 4 weeks before the\nestimated harvest date to harvest date"
 
 #Plot the VIP results
-png("Figures_Gala/VIP_quality_yield_v2.png", pointsize=10, width=4500, height=6000, res=600)
+png("Figures_Gala/VIP_quality_yield_v2.png", pointsize=10, width=4500, height=6100, res=600)
 
 ggplot(VIP_and_Coef_quality_yield_threshold_mit_coef_longer, aes(qualityyieldtp, forcats::fct_rev(variablen_VIP), color = PosNeg, size = VIP_threshold_corr)) +
   geom_point(shape = 16, stroke = 0) +
@@ -194,7 +174,11 @@ ggplot(VIP_and_Coef_quality_yield_threshold_mit_coef_longer, aes(qualityyieldtp,
          fill = guide_colorbar(ticks.colour = NA, order = 2)) +
   labs(size = "Area = VIP", color = "Coefficient", x = NULL, y = NULL)+
   scale_x_discrete(labels=labels, position = "top")+
-  geom_vline(xintercept = seq(0.5,5.5,1), linewidth=.2, color="gray75")
+  geom_vline(xintercept = seq(0.5,5.5,1), linewidth=.2, color="gray75")+
+  theme(plot.caption = element_text(hjust = 0),
+        plot.caption.position =  "plot")+
+  labs(caption = "*This variable has a negative value. A less negative i.e. higher value positively influences\nthe high-quality yield, as the fruit growth is inhibited less strongly.")
+
 dev.off()
 
 
@@ -284,7 +268,7 @@ yield_plot_p1<-ggplot(data = yield_diameter_p1_longer)+
   scale_fill_manual(values = c("#429323","#1E7BE1"),labels = c("high-quality yield", "total yield"))+
   theme(legend.title=element_blank())+
   geom_vline(xintercept = 127, color="black", linetype="dotted")+
-  annotate(geom="text", x=c(135,108), y=c(250, 60), label=c("Yield > 120 t/ha","full bloom"), color="black", angle=c(90,0), fontface=c("plain","italic"))
+  annotate(geom="text", x=c(135,108), y=c(250, 60), label=c("Yield > 120 t/ha"," at full bloom"), color="black", angle=c(90,0), fontface=c("plain","italic"))
 
 #before fruit thinning
 yield_plot_p2<-ggplot(data = yield_diameter_p2_longer)+
@@ -541,7 +525,7 @@ yield_plot_p1_with_without_hailnet<-ggplot(data = yield_diameter_p1_with_without
   scale_fill_manual(values = c("#429323","#B10BC3"),labels = c("with anti-hail net", "without anti-hail net"))+
   theme(legend.title=element_blank())+
   geom_vline(xintercept = 92, color="black", linetype="dotted")+
-  annotate(geom="text", x=c(98,70), y=c(200, 125), label=c("Yield > 90 t/ha","full bloom"), color="black", angle=c(90,0), fontface=c("plain","italic"))
+  annotate(geom="text", x=c(98,70), y=c(200, 125), label=c("Yield > 90 t/ha","at full bloom"), color="black", angle=c(90,0), fontface=c("plain","italic"))
 
 
 #add images to the plots
