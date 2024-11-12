@@ -1,7 +1,7 @@
 #Load required packages####
 library(ggtext)
 library(png)
-#library(grid)
+library(grid)
 library(patchwork)
 library(tidyverse)
 library(decisionSupport)
@@ -152,7 +152,7 @@ VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[59]<-"Actual 
 VIP_and_Coef_quality_yield_threshold_mit_coef_longer$variablen_VIP[60]<-"Actual duration from 4 weeks before the\nestimated harvest date to harvest date"
 
 #Plot the VIP results
-png("Figures_Gala/VIP_quality_yield_v2.png", pointsize=10, width=4500, height=6100, res=600)
+png("Figures_manuscript/VIP_quality_yield_v2.png", pointsize=10, width=4500, height=6100, res=600)
 
 ggplot(VIP_and_Coef_quality_yield_threshold_mit_coef_longer, aes(qualityyieldtp, forcats::fct_rev(variablen_VIP), color = PosNeg, size = VIP_threshold_corr)) +
   geom_point(shape = 16, stroke = 0) +
@@ -182,7 +182,7 @@ ggplot(VIP_and_Coef_quality_yield_threshold_mit_coef_longer, aes(qualityyieldtp,
 dev.off()
 
 
-#yield and quality yield####
+#Yield and quality yield####
 
 #select only the return from the simulations
 results_tp4<-apple_quality_and_yield_mc_simulation_tp4$y
@@ -371,12 +371,12 @@ plot_y_axis_name <- ggplot(data.frame(l = "Frequency", x = 1, y = 1)) +
   coord_cartesian(clip = "off")
 
 #complete and save the combined plot
-png("Figures_Gala/total_and_quality_yield.png", pointsize=10, width=3500, height=5000, res=600)
+png("Figures_manuscript/total_and_quality_yield.png", pointsize=10, width=3500, height=5000, res=600)
 plot_y_axis_name+plot_yield_all_tp+plot_layout(widths = c(1,25))
 dev.off()
 
 
-#with and without hail net ####
+#With and without anti-hail netting ####
 
 #select only the return from the simulations
 results_tp4_without_hailnet<-apple_quality_and_yield_mc_simulation_tp4_without_hailnet$y
@@ -562,7 +562,7 @@ plot_y_axis_name <- ggplot(data.frame(l = "Frequency", x = 1, y = 1)) +
   coord_cartesian(clip = "off")
 
 #complete and save the combined plot
-png("Figures_Gala/with_without_hailnet.png", pointsize=10, width=3500, height=5000, res=600)
+png("Figures_manuscript/with_without_hailnet.png", pointsize=10, width=3500, height=5000, res=600)
 plot_y_axis_name+plot_yield_all_tp_with_without_hailnet+plot_layout(widths = c(1,25))
 dev.off()
 
