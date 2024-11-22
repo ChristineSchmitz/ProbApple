@@ -1,6 +1,8 @@
 # **🍏 ProbApple 🍎** 
 A **Prob**abilistic model to forecast **Apple** yield and high-quality yield. 
 
+[![DOI](https://zenodo.org/badge/892454902.svg)](https://doi.org/10.5281/zenodo.14202191)
+
 # Background
 Fruit growers aim to produce high-quality apples in their orchards. An approximation for the total yield and the high-quality yield at harvest early in the season, helps the apple producers in their operational planning. We developed ProbApple a probabilistic model, based on Monte Carlo simulations to forecast apple yield and high-quality yield a four key time points during the vegetation period: ‘at full bloom’, ‘before fruit thinning’, ‘after June drop’, ‘four weeks before harvest’. 
 
